@@ -123,6 +123,7 @@ static input_device *gun8_device; // P8 LIGHTGUN
 static input_device *retrokbd_device; // KEYBD
 
 // state
+<<<<<<< HEAD
 static UINT32 P1_state[KEY_TOTAL];
 static UINT32 P2_state[KEY_TOTAL];
 static UINT32 P3_state[KEY_TOTAL];
@@ -131,6 +132,10 @@ static UINT32 P5_state[KEY_TOTAL];
 static UINT32 P6_state[KEY_TOTAL];
 static UINT32 P7_state[KEY_TOTAL];
 static UINT32 P8_state[KEY_TOTAL];
+=======
+static UINT8 P1_state[KEY_TOTAL];
+static UINT8 P2_state[KEY_TOTAL];
+>>>>>>> dd13e65 (add wiiu build)
 static UINT16 retrokbd_state[RETROK_LAST];
 static UINT16 retrokbd_state2[RETROK_LAST];
 
@@ -1995,7 +2000,13 @@ int mmain(int argc, const char *argv)
 {
 	static char gameName[1024];
 
+<<<<<<< HEAD
 	strncpy(gameName, argv, 1024);
 	if(executeGame(gameName)!=0) return -1;
+=======
+	strcpy(gameName,argv);
+	result = executeGame(gameName);
+	if(result!=0)return -1;
+>>>>>>> dd13e65 (add wiiu build)
 	return 1;
 }

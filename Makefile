@@ -441,6 +441,9 @@ else ifeq ($(platform), classic_armv8_a35)
 
 #   LITE:=1
 
+=======
+#   LITE:=1
+>>>>>>> dd13e65 (add wiiu build)
 # Raspberry Pi 2/3
 else ifneq (,$(findstring rpi,$(platform)))
    CC = g++
@@ -868,6 +871,10 @@ endif
 # executable targets and dependencies
 #-------------------------------------------------
 $(EMULATOR): $(OBJECTS)
+<<<<<<< HEAD
+=======
+	@echo Linking $(TARGETLIB)
+>>>>>>> dd13e65 (add wiiu build)
 ifeq ($(platform), wiiu)
 ifeq ($(LITE),1)
 	echo $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
@@ -877,7 +884,11 @@ else
 	$(AR) -M < full.mri
 endif
 else
+<<<<<<< HEAD
 	$(CXX) $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
+=======
+	$(LD) $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
+>>>>>>> dd13e65 (add wiiu build)
 endif
 
 #endif
