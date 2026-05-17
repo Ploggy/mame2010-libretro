@@ -871,10 +871,7 @@ endif
 # executable targets and dependencies
 #-------------------------------------------------
 $(EMULATOR): $(OBJECTS)
-<<<<<<< HEAD
-=======
 	@echo Linking $(TARGETLIB)
->>>>>>> dd13e65 (add wiiu build)
 ifeq ($(platform), wiiu)
 ifeq ($(LITE),1)
 	echo $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
@@ -884,11 +881,7 @@ else
 	$(AR) -M < full.mri
 endif
 else
-<<<<<<< HEAD
 	$(CXX) $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
-=======
-	$(LD) $(LDFLAGS) $(LDFLAGSEMULATOR) $^ $(LIBS) -o $(TARGETLIB)
->>>>>>> dd13e65 (add wiiu build)
 endif
 
 #endif
